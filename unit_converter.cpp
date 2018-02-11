@@ -1,7 +1,22 @@
+/*
+    Note for the Contributers :
+
+    this Unit converter uses classes and funtions to make user experience interactive.
+
+    currently it supports basic conversions,that are Length, Temperature, Time, Mass, Digital.
+
+    We are planning on adding more to them, like... Speed, Currency, Data Transfer Rate, Pressure, Volume, Energy...etc.
+
+    Before Adding your work please do read the formatting of the classes and functions, and try to use those convwntions only.
+    for understanding purposes.
+*/
+
 #include <iostream>
 #include <fstream>
 using namespace std;
+
 class kil_m{
+    //Class 1, included in LENGTH function.
     int x,y;
     float km=0;
     float m=0;
@@ -35,6 +50,7 @@ public:
     }
 };
 class kil_cm{
+    //Class 2, included in LENGTH function.
     int x,y;
     float km=0;
     float cm=0;
@@ -68,6 +84,7 @@ public:
     }
 };
 class kil_mil{
+    //Class 3, included in LENGTH function.
     int x,y;
     float km=0;
     float mm=0;
@@ -101,6 +118,7 @@ public:
     }
 };
 class kil_mile{
+    //Class 4, included in LENGTH function.
     int x,y;
     float km=0;
     float mil=0;
@@ -134,6 +152,7 @@ public:
     }
 };
 class kil_foot{
+    //Class 5, included in LENGTH function.
     int x,y;
     float km=0;
     float foot=0;
@@ -167,6 +186,7 @@ public:
     }
 };
 class m_cm{
+    //Class 6, included in LENGTH function.
     int x,y;
     float m=0;
     float cm=0;
@@ -200,6 +220,7 @@ public:
     }
 };
 class m_mil{
+    //Class 7, included in LENGTH function.
     int x,y;
     float m=0;
     float mil=0;
@@ -233,6 +254,7 @@ public:
     }
 };
 class m_mile{
+    //Class 8, included in LENGTH function.
     int x,y;
     float m=0;
     float mile=0;
@@ -266,6 +288,7 @@ public:
     }
 };
 class m_foot{
+    //Class 9, included in LENGTH function.
     int x,y;
     float m=0;
     float foot=0;
@@ -299,6 +322,7 @@ public:
     }
 };
 class cm_mil{
+    //Class 10, included in LENGTH function.
     int x,y;
     float cm=0;
     float mil=0;
@@ -332,6 +356,7 @@ public:
     }
 };
 class cm_mile{
+    //Class 11, included in LENGTH function.
     int x,y;
     float cm=0;
     float mile=0;
@@ -365,6 +390,7 @@ public:
     }
 };
 class cm_foot{
+    //Class 12, included in LENGTH function.
     int x,y;
     float cm=0;
     float foot=0;
@@ -398,6 +424,7 @@ public:
     }
 };
 class mil_mile{
+    //Class 13, included in LENGTH function.
     int x,y;
     float mil=0;
     float mile=0;
@@ -431,6 +458,7 @@ public:
     }
 };
 class mil_foot{
+    //Class 14, included in LENGTH function.
     int x,y;
     float mil=0;
     float foot=0;
@@ -464,6 +492,7 @@ public:
     }
 };
 class mile_foot{
+    //Class 15, included in LENGTH function.
     int x,y;
     float mile=0;
     float foot=0;
@@ -497,6 +526,7 @@ public:
     }
 };
 class c_f{
+    //Class 16, included in TEMPERATURE function.
     int x,y;
     float c;
     float f;
@@ -530,6 +560,7 @@ public:
     }
 };
 class c_k{
+    //Class 17, included in TEMPERATURE function.
     int x,y;
     float c;
     float k;
@@ -563,6 +594,7 @@ public:
     }
 };
 class f_k{
+    //Class 18, included in TEMPERATURE function.
     int x,y;
     float f;
     float k;
@@ -595,7 +627,9 @@ public:
         }
     }
 };
+
 void LENGTH(){
+    //this is the index and selector of the LENGTH. (includes classes 1 - 15)
     int a,b;
     cout<<"\nINDEX : "<<endl;
     cout<<"1 - kilometer"<<endl;
@@ -683,18 +717,12 @@ void LENGTH(){
         mf1.getdata();
         mf1.calc();
         mf1.putdata();
+    }else{
+        cout<<"\nInvalid INPUT. TERMINATED!"<<endl;
     }
 }
-void SPEED(){
-    int a,b;
-    cout<<"\nINDEX :"<<endl;
-    cout<<"1- Miles per Hour"<<endl;
-    cout<<"2- Foot per second"<<endl;
-}
-void CURRENCY(){
-
-}
 void TEMPERATURE(){
+    //this is the index and selector of the TEMPERATURE. (includes classes 16 - 18)
     int a,b;
     cout<<"\nINDEX : "<<endl;
     cout<<"1 - Celsius"<<endl;
@@ -719,59 +747,87 @@ void TEMPERATURE(){
         fk1.getdata();
         fk1.calc();
         fk1.putdata();
+    }else{
+        cout<<"\nInvalid INPUT. TERMINATED!"<<endl;
     }
 }
 void TIME(){
-
+    //this is the index and selector of the TIME.
+    int a,b;
+    cout<<"\nINDEX :"<<endl;
+    cout<<"1 - MicroSeconds"<<endl;
+    cout<<"2 - MilliSeconds"<<endl;
+    cout<<"3 - Seconds"<<endl;
+    cout<<"4 - Minutes"<<endl;
+    cout<<"5 - Hours"<<endl;
+    cout<<"6 - Days"<<endl;
+    cout<<"7 - Weeks"<<endl;
+    cout<<"8 - Months"<<endl;
+    cout<<"9 - Years"<<endl;
+    cout<<"10 - Decade"<<endl;
+    cout<<"11 - Century"<<endl;
 }
 void MASS(){
-
+    //this is the index and selector of the MASS.
+    int a,b;
+    cout<<"INDEX :"<<endl;
+    cout<<"1 - Tonne"<<endl;
+    cout<<"2 - Kilogram"<<endl;
+    cout<<"3 - Gram"<<endl;
+    cout<<"4 - MilliGram"<<endl;
+    cout<<"5 - Microgram"<<endl;
+    cout<<"6 - Pound"<<endl;
+    cout<<"7 - Ounce"<<endl;
 }
 void DIGITAL(){
-
-}
-void VOLUME(){
-
+    //this is the index and selector of the DIGITAL.
+    int a,b;
+    cout<<"INDEX :"<<endl;
+    cout<<"1 - bit"<<endl;
+    cout<<"2 - Byte"<<endl;
+    cout<<"3 - KibiByte"<<endl;
+    cout<<"4 - MebiByte"<<endl;
+    cout<<"5 - GibiByte"<<endl;
+    cout<<"6 - TebiByte"<<endl;
+    cout<<"7 - PebiByte"<<endl;
 }
 void check(int b){
+    //this function checks which function should be started.
     if(b==1){
         LENGTH();
     }else if(b==2){
-        SPEED();
-    }else if(b==3){
-        CURRENCY();
-    }else if(b==4){
         TEMPERATURE();
-    }else if(b==5){
+    }else if(b==3){
         TIME();
-    }else if(b==6){
+    }else if(b==4){
         MASS();
-    }else if(b==7){
+    }else if(b==5){
         DIGITAL();
-    }else if(b==8){
-        VOLUME();
+    }else{
+        cout<<"\nInvalid INPUT. TERMINATED!"<<endl;
     }
 }
 int input(){
+    //this function takes the input.
     int a;
     cout<<"\nEnter the number for the type of conversions you want to perform : ";
     cin>>a;
     return a;
 }
 void welcome(int a){
+    //welcome screen of the software.
     cout<<"\nWelcome to the Unit Converter!!!\n"<<endl<<"type 1 to see the index or 0 to continue : ";
     cin>>a;
+    //switch case is used to show the index.
     switch (a){
     case 1:
+    //More categories could be added to the INDEX.
         cout<<"\nINDEX :"<<endl;
         cout<<"type 1 for    LENGTH   conversions"<<endl;
-        cout<<"type 2 for    SPEED    conversions"<<endl;
-        cout<<"type 3 for   CURRENCY  conversions"<<endl;
-        cout<<"type 4 for TEMPERATURE conversions"<<endl;
-        cout<<"type 5 for     TIME    conversions"<<endl;
-        cout<<"type 6 for     MASS    conversions"<<endl;
-        cout<<"type 7 for    DIGITAL  conversions"<<endl;
-        cout<<"type 8 for    VOLUME   conversions"<<endl;
+        cout<<"type 2 for TEMPERATURE conversions"<<endl;
+        cout<<"type 3 for     TIME    conversions"<<endl;
+        cout<<"type 4 for     MASS    conversions"<<endl;
+        cout<<"type 5 for    DIGITAL  conversions"<<endl;
         break;
     case 0:
         break;
@@ -783,8 +839,10 @@ void welcome(int a){
 }
 int main(){
     int x;
-    cout<<"\nsENTER 1 TO BEGIN : ";
+    //this is the main function.
+    cout<<"\nENTER 1 TO BEGIN : ";
     cin>>x;
+    //loop is used to repeat the process.
     while(x==1){
         int a;
         welcome(a);
@@ -795,5 +853,6 @@ int main(){
         cout<<"\nENTER 1 TO BEGIN : ";
         cin>>x;
     }
+    cout<<"\nTHANKS FOR USING OUR SOFTWARE!!!"<<endl;
     return 0;
 }
