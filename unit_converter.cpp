@@ -7,7 +7,7 @@
 
     We are planning on adding more to them, like... Speed, Currency, Data Transfer Rate, Pressure, Volume, Energy...etc.
 
-    Before Adding your work please do read the formatting of the classes and functions, and try to use those convwntions only.
+    Before Adding your work please do read the formatting of the classes and functions, and try to use those conventions only.
     for understanding purposes.
 */
 
