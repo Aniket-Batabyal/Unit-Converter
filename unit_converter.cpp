@@ -1,858 +1,721 @@
-/*
-    Note for the Contributers :
+#include<iostream.h>
+#include<conio.h>
 
-    this Unit converter uses classes and funtions to make user experience interactive.
+class input
+{
+  public:
+        float i;
 
-    currently it supports basic conversions,that are Length, Temperature, Time, Mass, Digital.
 
-    We are planning on adding more to them, like... Speed, Currency, Data Transfer Rate, Pressure, Volume, Energy...etc.
 
-    Before Adding your work please do read the formatting of the classes and functions, and try to use those conventions only.
-    for understanding purposes.
-*/
-
-#include <iostream>
-#include <fstream>
-using namespace std;
-
-class kil_m{
-    //Class 1, included in LENGTH function.
-    int x,y;
-    float km=0;
-    float m=0;
-public:
-    kil_m(int a,int b){
-        x=a;
-        y=b;
-    }
-    void getdata(){
-        if(x<y){
-            cout<<"\nenter the value of kilometers : ";
-            cin>>km;
-        }else{
-            cout<<"\nenter the value of meters : ";
-            cin>>m;
-        }
-    }
-    void calc(){
-        if(x<y){
-            m=km*1000;
-        }else{
-            km=m/1000;
-        }
-    }
-    void putdata(){
-        if(x<y){
-            cout<<endl<<km<<" kilometers are "<<m<<" meters."<<endl;
-        }else{
-            cout<<endl<<m<<" meters are "<<km<<" kilometers."<<endl;
-        }
-    }
-};
-class kil_cm{
-    //Class 2, included in LENGTH function.
-    int x,y;
-    float km=0;
-    float cm=0;
-public:
-    kil_cm(int a,int b){
-        x=a;
-        y=b;
-    }
-    void getdata(){
-        if(x<y){
-            cout<<"\nenter the value of kilometers : ";
-            cin>>km;
-        }else{
-            cout<<"\nenter the value of centimeters : ";
-            cin>>cm;
-        }
-    }
-    void calc(){
-        if(x<y){
-            cm=km*100000;
-        }else{
-            km=cm/100000;
-        }
-    }
-    void putdata(){
-        if(x<y){
-            cout<<endl<<km<<" kilometers are "<<cm<<" centimeters."<<endl;
-        }else{
-            cout<<endl<<cm<<" centimeters are "<<km<<" kilometers."<<endl;
-        }
-    }
-};
-class kil_mil{
-    //Class 3, included in LENGTH function.
-    int x,y;
-    float km=0;
-    float mm=0;
-public:
-    kil_mil(int a,int b){
-        x=a;
-        y=b;
-    }
-    void getdata(){
-        if(x<y){
-            cout<<"\nenter the value of kilometers : ";
-            cin>>km;
-        }else{
-            cout<<"\nenter the value of millimeters : ";
-            cin>>mm;
-        }
-    }
-    void calc(){
-        if(x<y){
-            mm=km*1000000;
-        }else{
-            km=mm/1000000;
-        }
-    }
-    void putdata(){
-        if(x<y){
-            cout<<endl<<km<<" kilometers are "<<mm<<" millimeters."<<endl;
-        }else{
-            cout<<endl<<mm<<" millimeters are "<<km<<" kilometers."<<endl;
-        }
-    }
-};
-class kil_mile{
-    //Class 4, included in LENGTH function.
-    int x,y;
-    float km=0;
-    float mil=0;
-public:
-    kil_mile(int a,int b){
-        x=a;
-        y=b;
-    }
-    void getdata(){
-        if(x<y){
-            cout<<"\nenter the value of kilometers : ";
-            cin>>km;
-        }else{
-            cout<<"\nenter the value of miles : ";
-            cin>>mil;
-        }
-    }
-    void calc(){
-        if(x<y){
-            mil=km/1.60934;
-        }else{
-            km=mil*1.60934;
-        }
-    }
-    void putdata(){
-        if(x<y){
-            cout<<endl<<km<<" kilometers are "<<mil<<" miles."<<endl;
-        }else{
-            cout<<endl<<mil<<" miles are "<<km<<" kilometers."<<endl;
-        }
-    }
-};
-class kil_foot{
-    //Class 5, included in LENGTH function.
-    int x,y;
-    float km=0;
-    float foot=0;
-public:
-    kil_foot(int a,int b){
-        x=a;
-        y=b;
-    }
-    void getdata(){
-        if(x<y){
-            cout<<"\nenter the value of kilometers : ";
-            cin>>km;
-        }else{
-            cout<<"\nenter the value of foots : ";
-            cin>>foot;
-        }
-    }
-    void calc(){
-        if(x<y){
-            foot=km*3280.84;
-        }else{
-            km=foot/3280.84;
-        }
-    }
-    void putdata(){
-        if(x<y){
-            cout<<endl<<km<<" kilometers are "<<foot<<" foots."<<endl;
-        }else{
-            cout<<endl<<foot<<" foots are "<<km<<" kilometers."<<endl;
-        }
-    }
-};
-class m_cm{
-    //Class 6, included in LENGTH function.
-    int x,y;
-    float m=0;
-    float cm=0;
-public:
-    m_cm(int a,int b){
-        x=a;
-        y=b;
-    }
-    void getdata(){
-        if(x<y){
-            cout<<"\nenter the value of meters : ";
-            cin>>m;
-        }else{
-            cout<<"\nenter the value of centimeters : ";
-            cin>>cm;
-        }
-    }
-    void calc(){
-        if(x<y){
-            cm=m*100;
-        }else{
-            m=cm/100;
-        }
-    }
-    void putdata(){
-        if(x<y){
-            cout<<endl<<m<<" meters are "<<cm<<" centimeters."<<endl;
-        }else{
-            cout<<endl<<cm<<" centimeters are "<<m<<" meters."<<endl;
-        }
-    }
-};
-class m_mil{
-    //Class 7, included in LENGTH function.
-    int x,y;
-    float m=0;
-    float mil=0;
-public:
-    m_mil(int a,int b){
-        x=a;
-        y=b;
-    }
-    void getdata(){
-        if(x<y){
-            cout<<"\nenter the value of meters : ";
-            cin>>m;
-        }else{
-            cout<<"\nenter the value of millimeters : ";
-            cin>>mil;
-        }
-    }
-    void calc(){
-        if(x<y){
-            mil=m*1000;
-        }else{
-            m=mil/1000;
-        }
-    }
-    void putdata(){
-        if(x<y){
-            cout<<endl<<m<<" meters are "<<mil<<" millimeters."<<endl;
-        }else{
-            cout<<endl<<mil<<" millimeters are "<<m<<" meters."<<endl;
-        }
-    }
-};
-class m_mile{
-    //Class 8, included in LENGTH function.
-    int x,y;
-    float m=0;
-    float mile=0;
-public:
-    m_mile(int a,int b){
-        x=a;
-        y=b;
-    }
-    void getdata(){
-        if(x<y){
-            cout<<"\nenter the value of meters : ";
-            cin>>m;
-        }else{
-            cout<<"\nenter the value of miles : ";
-            cin>>mile;
-        }
-    }
-    void calc(){
-        if(x<y){
-            mile=m/1609.34;
-        }else{
-            m=mile*1609.34;
-        }
-    }
-    void putdata(){
-        if(x<y){
-            cout<<endl<<m<<" meters are "<<mile<<" miles."<<endl;
-        }else{
-            cout<<endl<<mile<<" miles are "<<m<<" meters."<<endl;
-        }
-    }
-};
-class m_foot{
-    //Class 9, included in LENGTH function.
-    int x,y;
-    float m=0;
-    float foot=0;
-public:
-    m_foot(int a,int b){
-        x=a;
-        y=b;
-    }
-    void getdata(){
-        if(x<y){
-            cout<<"\nenter the value of meters : ";
-            cin>>m;
-        }else{
-            cout<<"\nenter the value of foots : ";
-            cin>>foot;
-        }
-    }
-    void calc(){
-        if(x<y){
-            foot=m*3.28084;
-        }else{
-            m=foot/3.28084;
-        }
-    }
-    void putdata(){
-        if(x<y){
-            cout<<endl<<m<<" meters are "<<foot<<" foots."<<endl;
-        }else{
-            cout<<endl<<foot<<" foots are "<<m<<" meters."<<endl;
-        }
-    }
-};
-class cm_mil{
-    //Class 10, included in LENGTH function.
-    int x,y;
-    float cm=0;
-    float mil=0;
-public:
-    cm_mil(int a,int b){
-        x=a;
-        y=b;
-    }
-    void getdata(){
-        if(x<y){
-            cout<<"\nenter the value of centimeters : ";
-            cin>>cm;
-        }else{
-            cout<<"\nenter the value of millimeters : ";
-            cin>>mil;
-        }
-    }
-    void calc(){
-        if(x<y){
-            mil=cm*10;
-        }else{
-            cm=mil/10;
-        }
-    }
-    void putdata(){
-        if(x<y){
-            cout<<endl<<cm<<" centimeters are "<<mil<<" millimeters."<<endl;
-        }else{
-            cout<<endl<<mil<<" millimeters are "<<cm<<" centimeters."<<endl;
-        }
-    }
-};
-class cm_mile{
-    //Class 11, included in LENGTH function.
-    int x,y;
-    float cm=0;
-    float mile=0;
-public:
-    cm_mile(int a,int b){
-        x=a;
-        y=b;
-    }
-    void getdata(){
-        if(x<y){
-            cout<<"\nenter the value of centimeters : ";
-            cin>>cm;
-        }else{
-            cout<<"\nenter the value of miles : ";
-            cin>>mile;
-        }
-    }
-    void calc(){
-        if(x<y){
-            mile=cm/160934;
-        }else{
-            cm=mile*160934;
-        }
-    }
-    void putdata(){
-        if(x<y){
-            cout<<endl<<cm<<" centimeters are "<<mile<<" miles."<<endl;
-        }else{
-            cout<<endl<<mile<<" miles are "<<cm<<" centimeters."<<endl;
-        }
-    }
-};
-class cm_foot{
-    //Class 12, included in LENGTH function.
-    int x,y;
-    float cm=0;
-    float foot=0;
-public:
-    cm_foot(int a,int b){
-        x=a;
-        y=b;
-    }
-    void getdata(){
-        if(x<y){
-            cout<<"\nenter the value of centimeters : ";
-            cin>>cm;
-        }else{
-            cout<<"\nenter the value of foots : ";
-            cin>>foot;
-        }
-    }
-    void calc(){
-        if(x<y){
-            foot=cm/30.48;
-        }else{
-            cm=foot*30.48;
-        }
-    }
-    void putdata(){
-        if(x<y){
-            cout<<endl<<cm<<" centimeters are "<<foot<<" foots."<<endl;
-        }else{
-            cout<<endl<<foot<<" foots are "<<cm<<" centimeters."<<endl;
-        }
-    }
-};
-class mil_mile{
-    //Class 13, included in LENGTH function.
-    int x,y;
-    float mil=0;
-    float mile=0;
-public:
-    mil_mile(int a,int b){
-        x=a;
-        y=b;
-    }
-    void getdata(){
-        if(x<y){
-            cout<<"\nenter the value of millimeters : ";
-            cin>>mil;
-        }else{
-            cout<<"\nenter the value of miles : ";
-            cin>>mile;
-        }
-    }
-    void calc(){
-        if(x<y){
-            mile=mil/1609340;
-        }else{
-            mil=mile*1609340;
-        }
-    }
-    void putdata(){
-        if(x<y){
-            cout<<endl<<mil<<" millimeters are "<<mile<<" miles."<<endl;
-        }else{
-            cout<<endl<<mile<<" miles are "<<mil<<" millimeters."<<endl;
-        }
-    }
-};
-class mil_foot{
-    //Class 14, included in LENGTH function.
-    int x,y;
-    float mil=0;
-    float foot=0;
-public:
-    mil_foot(int a,int b){
-        x=a;
-        y=b;
-    }
-    void getdata(){
-        if(x<y){
-            cout<<"\nenter the value of millimeters : ";
-            cin>>mil;
-        }else{
-            cout<<"\nenter the value of foots : ";
-            cin>>foot;
-        }
-    }
-    void calc(){
-        if(x<y){
-            foot=mil/304.8;
-        }else{
-            mil=foot*304.8;
-        }
-    }
-    void putdata(){
-        if(x<y){
-            cout<<endl<<mil<<" millimeters are "<<foot<<" foots."<<endl;
-        }else{
-            cout<<endl<<foot<<" foots are "<<mil<<" millimeters."<<endl;
-        }
-    }
-};
-class mile_foot{
-    //Class 15, included in LENGTH function.
-    int x,y;
-    float mile=0;
-    float foot=0;
-public:
-    mile_foot(int a,int b){
-        x=a;
-        y=b;
-    }
-    void getdata(){
-        if(x<y){
-            cout<<"\nenter the value of miles : ";
-            cin>>mile;
-        }else{
-            cout<<"\nenter the value of foots : ";
-            cin>>foot;
-        }
-    }
-    void calc(){
-        if(x<y){
-            foot=mile*5280;
-        }else{
-            mile=foot/5280;
-        }
-    }
-    void putdata(){
-        if(x<y){
-            cout<<endl<<mile<<" miles are "<<foot<<" foots."<<endl;
-        }else{
-            cout<<endl<<foot<<" foots are "<<mile<<" miles."<<endl;
-        }
-    }
-};
-class c_f{
-    //Class 16, included in TEMPERATURE function.
-    int x,y;
-    float c;
-    float f;
-public:
-    c_f(int a, int b){
-        x=a;
-        y=b;
-    }
-    void getdata(){
-        if(x<y){
-            cout<<"\nenter the value of celsius : ";
-            cin>>c;
-        }else{
-            cout<<"\nenter the value of fahrenheit : ";
-            cin>>f;
-        }
-    }
-    void calc(){
-        if(x<y){
-            f=c*1.8+32;
-        }else{
-            c=(f-32)/1.8;
-        }
-    }
-    void putdata(){
-        if(x<y){
-            cout<<endl<<c<<" celcius are "<<f<<" fahrenheits."<<endl;
-        }else{
-            cout<<endl<<f<<" fahrenheits are "<<c<<" celsius."<<endl;
-        }
-    }
-};
-class c_k{
-    //Class 17, included in TEMPERATURE function.
-    int x,y;
-    float c;
-    float k;
-public:
-    c_k(int a, int b){
-        x=a;
-        y=b;
-    }
-    void getdata(){
-        if(x<y){
-            cout<<"\nenter the value of celsius : ";
-            cin>>c;
-        }else{
-            cout<<"\nenter the value of kelvin : ";
-            cin>>k;
-        }
-    }
-    void calc(){
-        if(x<y){
-            k=c+273.15;
-        }else{
-            c=k-273.15;
-        }
-    }
-    void putdata(){
-        if(x<y){
-            cout<<endl<<c<<" celcius are "<<k<<" kelvins."<<endl;
-        }else{
-            cout<<endl<<k<<" kelvins are "<<c<<" celsius."<<endl;
-        }
-    }
-};
-class f_k{
-    //Class 18, included in TEMPERATURE function.
-    int x,y;
-    float f;
-    float k;
-public:
-    f_k(int a, int b){
-        x=a;
-        y=b;
-    }
-    void getdata(){
-        if(x<y){
-            cout<<"\nenter the value of Fahrenheit : ";
-            cin>>f;
-        }else{
-            cout<<"\nenter the value of kelvin : ";
-            cin>>k;
-        }
-    }
-    void calc(){
-        if(x<y){
-            k=(f*1.8+32)+273.15;
-        }else{
-            f=(k-273.15)*1.8+32;
-        }
-    }
-    void putdata(){
-        if(x<y){
-            cout<<endl<<f<<" fahrenheits are "<<k<<" kelvins."<<endl;
-        }else{
-            cout<<endl<<k<<" kelvins are "<<f<<" fahrenheits."<<endl;
-        }
-    }
 };
 
-void LENGTH(){
-    //this is the index and selector of the LENGTH. (includes classes 1 - 15)
-    int a,b;
-    cout<<"\nINDEX : "<<endl;
-    cout<<"1 - kilometer"<<endl;
-    cout<<"2 - meter"<<endl;
-    cout<<"3 - centimeter"<<endl;
-    cout<<"4 - millimeter"<<endl;
-    cout<<"5 - mile"<<endl;
-    cout<<"6 - foot"<<endl;
-    cout<<"\nEnter 2 numbers for 'from' and 'to' : ";
-    cin>>a>>b;
-    if(a==b){
-        cout<<"\nthey are equal."<<endl;
-    }else if((a==1 && b==2) || (a==2 && b==1)){
-        kil_m mk1(a,b);
-        mk1.getdata();
-        mk1.calc();
-        mk1.putdata();
-    }else if((a==1 && b==3) || (a==3 && b==1)){
-        kil_cm ck1(a,b);
-        ck1.getdata();
-        ck1.calc();
-        ck1.putdata();
-    }else if((a==1 && b==4) || (a==4 && b==1)){
-        kil_mil mk1(a,b);
-        mk1.getdata();
-        mk1.calc();
-        mk1.putdata();
-    }else if((a==1 && b==5) || (a==5 && b==1)){
-        kil_mile mk1(a,b);
-        mk1.getdata();
-        mk1.calc();
-        mk1.putdata();
-    }else if((a==1 && b==6) || (a==6 && b==1)){
-        kil_foot fk1(a,b);
-        fk1.getdata();
-        fk1.calc();
-        fk1.putdata();
-    }else if((a==2 && b==3) || (a==3 && b==2)){
-        m_cm mc1(a,b);
-        mc1.getdata();
-        mc1.calc();
-        mc1.putdata();
-    }else if((a==2 && b==4) || (a==4 && b==2)){
-        m_mil mm1(a,b);
-        mm1.getdata();
-        mm1.calc();
-        mm1.putdata();
-    }else if((a==2 && b==5) || (a==5 && b==2)){
-        m_mile mc1(a,b);
-        mc1.getdata();
-        mc1.calc();
-        mc1.putdata();
-    }else if((a==2 && b==6) || (a==6 && b==2)){
-        m_foot mf1(a,b);
-        mf1.getdata();
-        mf1.calc();
-        mf1.putdata();
-    }else if((a==3 && b==4) || (a==4 && b==3)){
-        cm_mil cm1(a,b);
-        cm1.getdata();
-        cm1.calc();
-        cm1.putdata();
-    }else if((a==3 && b==5) || (a==5 && b==3)){
-        cm_mile cm1(a,b);
-        cm1.getdata();
-        cm1.calc();
-        cm1.putdata();
-    }else if((a==3 && b==6) || (a==6 && b==3)){
-        cm_foot cf1(a,b);
-        cf1.getdata();
-        cf1.calc();
-        cf1.putdata();
-    }else if((a==4 && b==5) || (a==5 && b==4)){
-        mil_mile mm1(a,b);
-        mm1.getdata();
-        mm1.calc();
-        mm1.putdata();
-    }else if((a==4 && b==6) || (a==6 && b==4)){
-        mil_foot mf1(a,b);
-        mf1.getdata();
-        mf1.calc();
-        mf1.putdata();
-    }else if((a==5 && b==6) || (a==6 && b==5)){
-        mile_foot mf1(a,b);
-        mf1.getdata();
-        mf1.calc();
-        mf1.putdata();
-    }else{
-        cout<<"\nInvalid INPUT. TERMINATED!"<<endl;
-    }
-}
-void TEMPERATURE(){
-    //this is the index and selector of the TEMPERATURE. (includes classes 16 - 18)
-    int a,b;
-    cout<<"\nINDEX : "<<endl;
-    cout<<"1 - Celsius"<<endl;
-    cout<<"2 - Fahrenheit"<<endl;
-    cout<<"3 - Kelvin"<<endl;
-    cout<<"\nEnter 2 numbers for 'from' and 'to' : ";
-    cin>>a>>b;
-    if(a==b){
-        cout<<"\nthey are equal."<<endl;
-    }else if((a==1 && b==2) || (a==2 && b==1)){
-        c_f cf1(a,b);
-        cf1.getdata();
-        cf1.calc();
-        cf1.putdata();
-    }else if((a==1 && b==3) || (a==3 && b==1)){
-        c_k ck1(a,b);
-        ck1.getdata();
-        ck1.calc();
-        ck1.putdata();
-    }else if((a==2 && b==3) || (a==3 && b==2)){
-        f_k fk1(a,b);
-        fk1.getdata();
-        fk1.calc();
-        fk1.putdata();
-    }else{
-        cout<<"\nInvalid INPUT. TERMINATED!"<<endl;
-    }
-}
-void TIME(){
-    //this is the index and selector of the TIME.
-    int a,b;
-    cout<<"\nINDEX :"<<endl;
-    cout<<"1 - MicroSeconds"<<endl;
-    cout<<"2 - MilliSeconds"<<endl;
-    cout<<"3 - Seconds"<<endl;
-    cout<<"4 - Minutes"<<endl;
-    cout<<"5 - Hours"<<endl;
-    cout<<"6 - Days"<<endl;
-    cout<<"7 - Weeks"<<endl;
-    cout<<"8 - Months"<<endl;
-    cout<<"9 - Years"<<endl;
-    cout<<"10 - Decade"<<endl;
-    cout<<"11 - Century"<<endl;
-}
-void MASS(){
-    //this is the index and selector of the MASS.
-    int a,b;
-    cout<<"INDEX :"<<endl;
-    cout<<"1 - Tonne"<<endl;
-    cout<<"2 - Kilogram"<<endl;
-    cout<<"3 - Gram"<<endl;
-    cout<<"4 - MilliGram"<<endl;
-    cout<<"5 - Microgram"<<endl;
-    cout<<"6 - Pound"<<endl;
-    cout<<"7 - Ounce"<<endl;
-}
-void DIGITAL(){
-    //this is the index and selector of the DIGITAL.
-    int a,b;
-    cout<<"INDEX :"<<endl;
-    cout<<"1 - bit"<<endl;
-    cout<<"2 - Byte"<<endl;
-    cout<<"3 - KibiByte"<<endl;
-    cout<<"4 - MebiByte"<<endl;
-    cout<<"5 - GibiByte"<<endl;
-    cout<<"6 - TebiByte"<<endl;
-    cout<<"7 - PebiByte"<<endl;
-}
-void check(int b){
-    //this function checks which function should be started.
-    if(b==1){
-        LENGTH();
-    }else if(b==2){
-        TEMPERATURE();
-    }else if(b==3){
-        TIME();
-    }else if(b==4){
-        MASS();
-    }else if(b==5){
-        DIGITAL();
-    }else{
-        cout<<"\nInvalid INPUT. TERMINATED!"<<endl;
-    }
-}
-int input(){
-    //this function takes the input.
-    int a;
-    cout<<"\nEnter the number for the type of conversions you want to perform : ";
-    cin>>a;
-    return a;
-}
-void welcome(int a){
-    //welcome screen of the software.
-    cout<<"\nWelcome to the Unit Converter!!!\n"<<endl<<"type 1 to see the index or 0 to continue : ";
-    cin>>a;
-    //switch case is used to show the index.
-    switch (a){
-    case 1:
-    //More categories could be added to the INDEX.
-        cout<<"\nINDEX :"<<endl;
-        cout<<"type 1 for    LENGTH   conversions"<<endl;
-        cout<<"type 2 for TEMPERATURE conversions"<<endl;
-        cout<<"type 3 for     TIME    conversions"<<endl;
-        cout<<"type 4 for     MASS    conversions"<<endl;
-        cout<<"type 5 for    DIGITAL  conversions"<<endl;
-        break;
-    case 0:
-        break;
-    default:
-        cout<<"\ninvalid input considered as 0"<<endl;
-        break;
-    }
 
-}
-int main(){
-    int x;
-    //this is the main function.
-    cout<<"\nENTER 1 TO BEGIN : ";
-    cin>>x;
-    //loop is used to repeat the process.
-    while(x==1){
-        int a;
-        welcome(a);
-        int b=input();
-        check(b);
-        x=0;
-        cout<<"\nTHANKS FOR USING OUR SOFTWARE!!!"<<endl;
-        cout<<"\nENTER 1 TO BEGIN : ";
+
+  class length:public input
+  {
+   public:
+       void mm_m();
+       void m_mm();
+       void cm_m();
+       void m_cm();
+       void cm_km();
+       void km_cm();
+       void m_mile();
+       void mile_m();
+       void km_mile();
+       void mile_km();
+       void feet_m();
+       void m_feet();
+       void inch_m();
+       void m_inch();
+       void yard_m();
+       void m_yard();
+
+      };
+
+class temp:public input
+ {
+ public:
+       void cel_f();
+       void f_cel();
+       void cel_k();
+       void k_cel();
+       void f_k();
+       void k_f();
+
+  };
+
+  class weight:public input
+    {
+    public:
+       void milligm_gm();
+       void gm_milligm();
+       void gm_kg();
+       void kg_gm();
+       void kg_mton();
+       void mton_kg();
+       void pound_kg();
+       void kg_pound();
+       void gm_pound();
+       void pound_gm();
+
+    };
+
+   class area :public input
+   {
+   public:
+       void mmSq_cmSq();
+       void cmSq_mmSq();
+       void cmSq_mSq ();
+       void mSq_cmSq ();
+       void mSq_kmSq ();
+       void kmSq_mSq ();
+       void feetSq_mSq();
+       void mSq_feetSq();
+       void yardSq_mSq();
+       void mSq_yardSq();
+       void mileSq_kmSq();
+       void kmSq_mileSq();
+       void acre_kmSq();
+       void kmSq_acre();
+       void acre_hect();
+       void hect_acre();
+        };
+
+   class vol:public input
+   {
+   public:
+       void mL_L();
+       void L_mL();
+       void mmQ_cmQ();
+       void cmQ_mmQ();
+       void cmQ_mQ ();
+       void mQ_cmQ ();
+       void inchQ_mQ();
+       void mQ_inchQ();
+       void feetQ_mQ();
+       void mQ_feetQ();
+       void mQ_gallon();
+       void gallon_mQ();
+       void L_gallon();
+       void gallon_L();
+
+   };
+
+     void length ::mm_m()
+         {
+          cout<<"\n   Millimeter= ";
+          cin>>i;
+          cout<<"\n   Meter= "<<i*.001;
+          }
+     void length ::m_mm()
+         {
+         cout<<"\n   meter= ";
+         cin>>i;
+         cout<<"\n   millimeter= "<<i*1000;
+         }
+     void length ::cm_m()
+         {
+          cout<<"\n   Centimeter= ";
+          cin>>i;
+          cout<<"\n   Meter= "<<i*.01;
+          }
+    void length ::m_cm()
+        {
+         cout<<"\n   meter= ";
+         cin>>i;
+         cout<<"\n   cm= "<<i*100;
+         }
+    void length::m_mile()
+         {
+         cout<<"\n   meter= ";
+         cin>>i;
+         cout<<"\n   mile= "<<i*.00062;
+         }
+    void length::mile_m()
+        {
+        cout<<"\n   mile= ";
+        cin>>i;
+        cout<<"\n   meter= "<<i*1609.344;
+        }
+     void length :: cm_km()
+        {
+         cout<<"\n   cm= ";
+         cin>>i;
+         cout<<"\n   km= "<<i*0.00001;
+
+        }
+
+    void length :: km_cm()
+        {   cout<<"\n   km= ";
+           cin>>i;
+           cout<<"\n   cm= "<<i*100000;
+        }
+    void length::feet_m()
+        {
+        cout<<"\n   feet= ";
+        cin>>i;
+        cout<<"\n   meter= "<<i*.3048;
+        }
+    void length::m_feet()
+        {
+        cout<<"\n   meter= ";
+        cin>>i;
+        cout<<"\n   feet= "<<i*3.28084;
+        }
+    void length::yard_m()
+        {
+        cout<<"\n   yard= ";
+        cin>>i;
+        cout<<"\n   meter= " <<i*0.9144;
+        }
+    void length::m_yard()
+        {
+        cout<<"\n   meter= ";
+        cin>>i;
+        cout<<"\n   yard= "<<i*1.09361;
+        }
+    void length::inch_m()
+        {
+        cout<<"\n   inch=";
+        cin>>i;
+        cout<<"\n   meter="<<i*.0254;
+        }
+    void length::m_inch()
+        {
+        cout<<"\n   meter=";
+        cin>>i;
+        cout<<"\n   inch="<<i*39.37008;
+        }
+    void length ::km_mile()
+        {
+        cout<<"\n   kilometer=";cin>>i;
+        cout<<"\n   mile="<<i*.6213712 ;
+        }
+    void length ::mile_km( )
+        {
+        cout<<"\n   mile="; cin>>i;
+        cout<<"\n   kilometer="<<i*1.60934;
+        }
+
+
+
+    void temp::cel_f()
+       {
+       cout<<"\n   Celsius= ";
+       cin>>i;
+        cout<<"\n   Fahrenheit= " <<(((9*i)/5)+32);
+       }
+    void temp::f_cel()
+       {
+       cout<<"\n   Fahrenheit= ";   cin>>i;
+       cout<<"\n   Celsius= "<<(((i-32)/9)*5);
+        }
+    void temp::cel_k()
+        {
+        cout<<"\n   celsius= ";cin>>i;
+        cout<<"\n   kelvin= "<<i+273;
+        }
+    void temp::k_cel()
+        {
+        cout<<"\n   kelvin= ";  cin>>i;
+        cout<<"\n   celsius= "<<i-273;
+        }
+
+
+
+    void weight::milligm_gm()
+        {
+        cout<<"\n   milligramm= ";cin>>i;
+        cout<<"\n   gramm= "<<i*.001;
+        }
+    void weight::gm_milligm()
+        {
+        cout<<"\n   gram= "; cin>>i;
+        cout<<"\n   milligramm= "<<i*1000;
+        }
+    void weight::pound_kg()
+       {
+       cout<<"\n   pound= "; cin>>i;
+       cout<<"\n   kilogramm= "<<i*.45359;
+       }
+     void weight::gm_kg()
+        { cout<<"\n   Gramm= ";cin>>i;
+         cout<<"\n   killogramm= "<<i*.001;
+         }
+     void weight::kg_gm()
+    {    cout<<"\n   killogramm= ";cin>>i;
+        cout<<"\n   Gramm= "<<i*1000;
+        }
+
+
+    void weight::kg_pound()
+      {
+      cout<<"\n   kilogramm= ";cin>>i;
+      cout<<"\n   pound= "<<2.20462*i;
+      }
+    void weight::gm_pound()
+      {
+      cout<<"\n   gramm= ";  cin>>i;
+      cout<<"\n   pound= "<<i*.0022;
+      }
+    void weight::pound_gm()
+      {
+      cout<<"\n   pound= "; cin>>i;
+      cout<<"\n   gramm= "<<i*453.59237;
+      }
+    void weight::kg_mton()
+      {
+      cout<<"\n   kilogramm= ";cin>>i;
+      cout<<"\n   matric ton= "<<i*.001;
+       }
+    void weight::mton_kg()
+      {
+     cout<<"\n   metric ton= "; cin>>i;
+     cout<<"\n   kilogramm= "<<i*1000;
+      }
+
+
+    void area::mmSq_cmSq()
+        {
+        cout<<"\n   squqre mm= ";cin>>i;
+        cout<<"\n   square cm= "<<i*.01;
+        }
+    void area::cmSq_mmSq()
+        {
+        cout<<"\n   square cm= ";cin>>i;
+        cout<<"\n   square mm= "<<i*100;
+        }
+    void area::cmSq_mSq()
+        {
+        cout<<"\n   square cm= ";cin>>i;
+        cout<<"\n   square m= "<<i*.0001;
+        }
+    void area::mSq_cmSq()
+        {
+        cout<<"\n   square m= "; cin>>i;
+        cout<<"\n   square cm= "<<i*10000;
+        }
+    void area::mSq_kmSq()
+        {
+        cout<<"\n   square m= "; cin>>i;
+        cout<<"\n   square km= "<<i*.000001;
+        }
+    void area::kmSq_mSq()
+        {
+        cout<<"\n   square km= ";cin>>i;
+        cout<<"\n   square m= "<<i*1000000;
+        }
+    void area::feetSq_mSq()
+      {
+      cout<<"\n   square feet= ";cin>>i;
+      cout<<"\n   square m= "<<i*.0929;
+      }
+    void area::mSq_feetSq()
+      {
+      cout<<"\n   square m= ";  cin>>i;
+      cout<<"\n   square feet= "<<i*10.76391;
+      }
+    void area::yardSq_mSq()
+      {
+      cout<<"\n   square yard= ";cin>>i;
+      cout<<"\n   square m= "<<i*.83613;
+      }
+     void area::mSq_yardSq()
+       {
+        cout<<"\n   square m= "; cin>>i;
+        cout<<"\n   square yard= "<<i*1.19599;
+       }
+     void area::mileSq_kmSq()
+        {
+        cout<<"\n   square mile= ";cin>>i;
+        cout<<"\n   square km= "<<i*2.5899;
+        }
+     void area::kmSq_mileSq()
+        {
+         cout<<"\n   square km= " ;cin>>i;
+          cout<<"\n   square mile= "<<i*.3861;
+        }
+     void area::acre_hect()
+        {
+        cout<<"\n   Acre= ";   cin>>i;
+        cout<<"\n   Hector= "<<i*.40469;
+        }
+     void area::hect_acre()
+        {
+        cout<<"\n   Hector= ";cin>>i;
+        cout<<"\n   Acre= " <<i*2.47105;
+        }
+      void area::acre_kmSq()
+         {cout<<"\n   Acre= ";cin>>i;
+         cout<<"\n   Square km= "<<i*.00405;
+         }
+      void area::kmSq_acre()
+      {
+       cout<<"\n   Square km= ";cin>>i;
+       cout<<"\n   Acre= "<<i*247.10538;
+
+      }
+
+     void vol::mL_L()
+         {
+         cout<<"\n   milli litre= ";cin>>i;
+         cout<<"\n   Litre= "<<i*.001;
+         }
+      void vol::L_mL()
+         {         cout<<"\n   Litre= "; cin>>i;
+         cout<<"\n   milli Litre= "<<i*1000;
+         }
+     void vol::cmQ_mmQ()
+         {
+          cout<< "\n   cubic cm= "; cin>>i;
+          cout<<"\n   cubic mm= "<<i*1000;
+          }
+     void vol::mmQ_cmQ()
+         {
+         cout<<"\n   cubic mm= ";   cin>>i;
+         cout<<"\n   cubic cm= "<<i*.001;
+         }
+     void vol::cmQ_mQ()
+        {
+        cout<<"\n   cubic cm= ";  cin>>i;
+        cout<<"\n   cubic meter= "<<i*.000001;
+        }
+     void vol::mQ_cmQ()
+        {
+        cout<<"\n   cubic meter= "; cin>>i;
+        cout<<"\n   cubic cm= "<<i*1000000;
+        }
+     void vol::inchQ_mQ()
+       {
+       cout<<"\n   cubic inch= ";  cin>>i;
+       cout<<"\n   cubic meter= "<<i*.00002;
+       }
+     void vol::mQ_inchQ()
+       {
+       cout<<"\n   cubic meter= "; cin>>i;
+       cout<<"\n   cubic inch= "<<i*61023.74409;
+       }
+     void vol::feetQ_mQ()
+      {
+       cout<<"\n   cubic feet= "; cin>>i;
+       cout<<"\n   cubic meter= "<<i*1222 ;
+
+      }
+     void vol::mQ_feetQ()
+       {
+       cout<<"\n   cubic meter= ";cin>>i;
+       cout<<"\n   cubic feet= "<<i*123;
+       }
+     void vol::mQ_gallon()
+       {
+       cout<<"\n   cubic meter= ";cin>>i;
+       cout<<"\n   gallon= "<<i*264.17205;
+       }
+     void vol::gallon_mQ()
+       {
+       cout<<"\n   Gallon= "; cin>>i;
+       cout<<"\n   cubic meter= "<<i*.00379;
+       }
+     void vol::L_gallon()
+        {
+        cout<<"\n   Litre= ";cin>>i;
+        cout<<"\n   gallon= "<<i*.21997;
+        }
+    void vol::gallon_L()
+        {
+        cout<<"\n   Gallon= "; cin>>i;
+        cout<<"\n   Litre= "<<i*4.54609;
+        }
+
+
+
+    void main()
+        {
+    clrscr();
+
+    length b;
+    weight c;
+    vol d;
+    area e;
+    temp f;
+    int x,y;
+       textcolor(0);
+       textbackground(99);
+       lowvideo();
+
+    while(1)
+    {
+        clrscr();
+        cout<<"\t\t\tWELCOME TO UNIT CONVERTION\n";
+        cout<<"\n      TYPE"<<"\n     ------";
+        cout<<"\n  1: Length\n" << "  2: Temparature\n"<<"  3: Weight\n"<<"  4: Area\n"<<"  5: Volume\n" <<"  6: Exit\n";
+        cout<<"\n\nPlease choose your Convertion Type:" ;
         cin>>x;
-    }
-    cout<<"\nTHANKS FOR USING OUR SOFTWARE!!!"<<endl;
-    return 0;
-}
+        if(x==1)
+             {           clrscr();
+
+                  cout<<"\n\n choose your unit convertion:\n";
+
+                    cout<<"\n  1 : mm-m";
+                    cout<<"\n  2 : m-mm";
+                    cout<<"\n  3 : cm-m";
+                    cout<<"\n  4 : m-cm";
+                    cout<<"\n  5 : cm_km";
+                    cout<<"\n  6 : km-cm";
+                    cout<<"\n  7 : m-mile";
+                    cout<<"\n  8 : mile-m";
+                    cout<<"\n  9 : km-mile";
+                   cout<<"\n 10 : mile-km";
+                   cout<<"\n 11 : feet-m";
+                   cout<<"\n 12 : m-feet";
+                   cout<<"\n 13 : inch-m";
+                   cout<<"\n 14 : m-inch";
+                   cout<<"\n 15 : yard-m";
+                  cout<<"\n 16 : m-yard";
+                  cout<<"\n 17 : Back to The Main Menu";
+
+
+         while(1)
+               {
+                cout<<"\n\n Please Enter Your Choice= ";
+               cin>>y;
+
+                if (y==1)
+                    { b.mm_m(); }
+                else if(y==2)
+                    { b.m_mm(); }
+                else if (y==3)
+                    { b.cm_m(); }
+                else if (y==4)
+                    { b.m_cm(); }
+                else if (y==5)
+                    { b.cm_km(); }
+                else if (y==6)
+                    {  b.km_cm(); }
+                else if (y==7)
+                    {  b.m_mile(); }
+                else if (y==8)
+                    {   b.mile_m(); }
+                else if (y==9)
+                     {   b.km_mile(); }
+                else if (y==10)
+                    {  b.mile_km(); }
+                else if (y==11)
+                     {  b.feet_m(); }
+                else if (y==12)
+                     { b.m_feet(); }
+                 else if (y==13)
+                      { b.inch_m();}
+                else if(y==14)
+                    { b.m_inch();}
+                else if (y==15)
+                    {b.yard_m();}
+              else if (y==16)
+                    {b.m_yard();}
+              else if (y==17)
+                    {break;}
+           }
+           }
+           else if(x==2)
+                 {   clrscr();
+                  cout<<"\n\n choose your unit convertion:\n";
+
+                  cout<<"\n  1: Celsius-Fahrenheit";
+                  cout<<"\n  2: Fahrenheit-Celsius";
+                  cout<<"\n  3: Celsius-Kelvin";
+                  cout<<"\n  4: Kelvin-Celcius";
+                  cout<<"\n  5: Back to The Main Menu";
+          while(1)
+          {
+          cout<<"\n\n Please Enter Your Choice= ";
+            cin>>y;
+
+                if(y==1)
+                   { f.cel_f(); }
+                else if(y==2)
+                   {f.f_cel();}
+                 else if (y==3)
+                   {f.cel_k();}
+                else if(y==4)
+                 {f.k_cel();}
+                else if(y==5)
+                    {break;}
+            }
+            }
+            else if(x==3)
+            {                  clrscr();
+             cout<<"\n\nchoose your unit convertion :\n";
+
+             cout<<"\n  1: Milligm-Gramm";
+             cout<<"\n  2: Gramm-milligm";
+             cout<<"\n  3: Gramm-killogram";
+             cout<<"\n  4: killoGramm-Gramm";
+             cout<<"\n  5: pound-killogramm";
+             cout<<"\n  6: killogramm-pound";
+             cout<<"\n  7: Gramm-Pound";
+             cout<<"\n  8: Pound-gramm";
+             cout<<"\n  9: killogramm-Metric ton";
+            cout<<"\n 10: Metric ton-Killogramm";
+            cout<<"\n 11: Back to The Main Menu";
+
+           while(1)
+             {
+              cout<<"\n\nPlease Enter Your Choice= ";
+              cin>>y;
+
+             if (y==1)
+                {c.milligm_gm();}
+             else if (y==2)
+                {c.gm_milligm();}
+             else if (y==3)
+                {c.gm_kg();}
+             else if (y==4)
+                {c.kg_gm();}
+             else if (y==5)
+                {c.pound_kg();}
+             else if (y==6)
+                {c.kg_pound();}
+             else if (y==7)
+                {c.gm_pound();}
+             else if (y==8)
+                {c.pound_gm();}
+             else if (y==9)
+                {c.kg_mton();}
+             else if (y==10)
+                {c.mton_kg();}
+             else if (y==11)
+                {break;}
+        }
+        }
+        else if(x==4)
+                {             clrscr();
+                cout<<"\n\nchoose your unit convertion:\n";
+
+                cout<<"\n   1: Square mm-Square cm";
+                cout<<"\n   2: square cm-Square mm";
+                cout<<"\n   3: square cm-square m";
+                cout<<"\n   4: Square m-Square cm";
+                cout<<"\n   5: Square m-Square km";
+                cout<<"\n   6: Square km-Square m";
+                cout<<"\n   7: Square feet-Square m";
+                cout<<"\n   8: Square m-Square feet";
+                cout<<"\n   9: Square Yard-Square m";
+                cout<<"\n  10: Square m-Square yard";
+                cout<<"\n  11: Square mile-Square km";
+                cout<<"\n  12: Square km-Square mile";
+                cout<<"\n  13: Acre-Hectare";
+                cout<<"\n  14: Hectare-Acre";
+                cout<<"\n  15: Square km-Acre ";
+                cout<<"\n  16: Acre-Square km";
+                cout<<"\n  17: Back to The Main Menu";
+
+            while(1)
+            {
+            cout<<"\n\nPlease Enter Your Choice= ";
+              cin>>y;
+
+                if(y==1)
+                  {e.mmSq_cmSq();}
+                else if(y==2)
+                {e.cmSq_mmSq();}
+                else if(y==3)
+                {e.cmSq_mSq();}
+                else if(y==4)
+                {e.mSq_cmSq();}
+                else if(y==5)
+                {e.mSq_kmSq();}
+                else if(y==6)
+                {e.kmSq_mSq();}
+                else if(y==7)
+                {e.feetSq_mSq();}
+                else if(y==8)
+                {e.mSq_feetSq();}
+                else if(y==9)
+                {e.yardSq_mSq();}
+                else if(y==10)
+                {e.mSq_yardSq();}
+                else if(y==11)
+                {e.mileSq_kmSq();}
+                else if(y==12)
+                {e.kmSq_mileSq();}
+                else if(y==13)
+                {e.acre_hect();}
+                else if(y==14)
+                {e.hect_acre();}
+                else if(y==15)
+                {e.kmSq_acre();}
+                else if(y==16)
+                {e.acre_kmSq();}
+                else if(y==17)
+                {break;}
+            }
+            }
+        else if(x==5)
+            {           clrscr();
+               cout<<"\n\nchoose your unit convertion:\n";
+
+               cout<<"\n   1 : ml-Litre";
+               cout<<"\n   2 : Litre-ml";
+               cout<<"\n   3 : Cubic mm-Cubic cm";
+               cout<<"\n   4 : Cubic cm-Cubic mm";
+               cout<<"\n   5 : Cubic cm-Cubic m";
+               cout<<"\n   6 : Cubic m-Cubic cm";
+               cout<<"\n   7 : Cubic Inch-Cubic m";
+               cout<<"\n   8 : Cubic m-Cubic Inch";
+               cout<<"\n   9 : Cubic feet-Cubic m";
+               cout<<"\n  10 : Cubic m-Cubic feet";
+               cout<<"\n  11 : Cubic m-Gallon (uk)";
+               cout<<"\n  12 : Gallon-Cubic m";
+               cout<<"\n  13 : Litre-Gallon";
+               cout<<"\n  14 : Gallon-Litre";
+               cout<<"\n  15 : Back to The Main Menu";
+
+
+            while(1)
+             { cout<<"\n\nPlease Enter Your Choice= ";
+              cin>>y;
+
+                if (y==1)
+                  {d.mL_L();}
+             else if (y==2)
+                  {d.L_mL();}
+             else if (y==3)
+                  {d.mmQ_cmQ();}
+            else if (y==4)
+                  {d.cmQ_mmQ();}
+            else if (y==5)
+                  {d.cmQ_mQ();}
+            else if (y==6)
+                  {d.mQ_cmQ();}
+            else if (y==7)
+                  {d.inchQ_mQ();}
+            else if (y==8)
+                  {d.mQ_inchQ();}
+            else if (y==9)
+                  {d.feetQ_mQ();}
+            else if (y==10)
+                  {d.mQ_feetQ();}
+            else if (y==11)
+                  {d.mQ_gallon();}
+            else if (y==12)
+                  {d.gallon_mQ();}
+            else if (y==13)
+                {d.L_gallon();}
+            else if(y==14)
+                {d.gallon_L();}
+            else if(y==15)
+                {break;}
+           }
+           }
+
+
+
+
+        else if(x==6){ break;}
+
+                }
+
+
+         }
